@@ -8,20 +8,8 @@ melbourne = pd.read_csv(melbourne)
 melbourne['price'] = melbourne['price'] * 0.61
 
 
-# Removing lines with null values
-# def null_lines(perth, arquivo_csv):
-#     missing_values = perth.isnull().sum(axis=1)
-#     remove_idx = missing_values[missing_values == 7].index  # remove all lines with 7 missing values
-#     df = perth.drop(remove_idx)
-#     df.to_csv(arquivo_csv, index=False)
-#
-#
-# null_lines(melbourne, 'Ficheiros_sOutliers/melb_file_sOutliers.csv')
-#
-#
-# # Using a median to fill in the missing values of the column 'square_meters'
-# median_square_meters = melbourne['square_meters'].median()
-# melbourne['square_meters'] = melbourne['square_meters'].replace(0, median_square_meters)
+# median_square_meters = melbourne['car_garage'].median()
+# melbourne['car_garage'].fillna(median_square_meters, inplace=True)
 #
 #
 # def remove_outliers(df, column):

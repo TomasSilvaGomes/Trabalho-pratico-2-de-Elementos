@@ -8,8 +8,8 @@ perth = "Ficheiros_Normalizados/perth_data_normalizado.csv"
 melbourne = "Ficheiros_Normalizados/melb_data_normalizado.csv"
 
 
-# Treino usamos perth e teste usamos melbourne para isso podemos dar concat nos dois dataframes e depois dividir em X e y
-
+# Treino usamos perth e teste.csv usamos melbourne para isso podemos dar concat nos dois dataframes e depois dividir em X e y
+perth = pd.read_csv(perth)
 melbourne = pd.read_csv(melbourne)
 
 # Concatenar os dois dataframes
@@ -19,7 +19,7 @@ data = pd.concat([perth, melbourne], axis=0)
 X = data.drop('price', axis=1)
 y = data['price']
 
-# Dividir em treino e teste
+# Dividir em treino e teste.csv
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
 # Treinar o modelo
