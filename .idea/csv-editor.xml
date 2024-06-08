@@ -3,6 +3,62 @@
   <component name="CsvFileAttributes">
     <option name="attributeMap">
       <map>
+        <entry key="\Ficheiros\perth_file.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\Ficheiros_Normalizados\perth_data_normalizado.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\Ficheiros_Originais\Perth_file.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\Ficheiros_Originais\melb_data.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\Ficheiros_sOutliers\melb_data_outliers.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\Ficheiros_sOutliers\melb_file_sOutliers.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\Ficheiros_sOutliers\perth_file_ouliers.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\Ficheiros_sOutliers\perth_file_sOutliers.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\Projeto\Ficheiros\melb_data.csv">
           <value>
             <Attribute>
@@ -17,7 +73,7 @@
             </Attribute>
           </value>
         </entry>
-        <entry key="\Projeto\Ficheiros_Normalizados\perth_normalized.csv">
+        <entry key="\Projeto\Ficheiros_Normalizados\melb_data_normalizado.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
