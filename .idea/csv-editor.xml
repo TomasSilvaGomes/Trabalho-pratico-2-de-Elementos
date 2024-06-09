@@ -3,6 +3,13 @@
   <component name="CsvFileAttributes">
     <option name="attributeMap">
       <map>
+        <entry key="\Ficheiros_Normalizados\NY_data_normalizado.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\Ficheiros_Normalizados\melb_data_normalizado.csv">
           <value>
             <Attribute>
@@ -17,7 +24,21 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\Ficheiros_Originais\NY.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\Ficheiros_Originais\Perth_file.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\Ficheiros_Originais\homesUpdated3.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
@@ -38,7 +59,14 @@
             </Attribute>
           </value>
         </entry>
-        <entry key="\Ficheiros_Originais\teste.csv">
+        <entry key="\Ficheiros_Originais\portland.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\Ficheiros_sOutliers\NY_sOutliers.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
@@ -53,13 +81,6 @@
           </value>
         </entry>
         <entry key="\Ficheiros_sOutliers\perth_file_sOutliers.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="\Ficheiros_sOutliers\teste.csv.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
