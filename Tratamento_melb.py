@@ -8,8 +8,8 @@ melbourne = pd.read_csv(melbourne)
 melbourne['price'] = melbourne['price'] * 0.61
 
 
-median_square_meters = melbourne['car_garage'].median()
-melbourne['car_garage'].fillna(median_square_meters, inplace=True)
+median_car_garage = melbourne['car_garage'].median()
+melbourne['car_garage'].fillna(median_car_garage, inplace=True)
 
 
 # use winsorization to remove outliers
