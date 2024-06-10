@@ -1,12 +1,10 @@
 import pandas as pd
-from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_squared_error
 from sklearn.metrics import mean_absolute_error
-from sklearn.preprocessing import PolynomialFeatures
-from sklearn.pipeline import make_pipeline
 import matplotlib.pyplot as plt
-import numpy as np
+
+
 # Carregar os dados
 
 
@@ -16,36 +14,37 @@ melbourne = "Ficheiros_Normalizados/melb_data_normalizado.csv"
 perth = pd.read_csv(perth)
 melbourne = pd.read_csv(melbourne)
 
-data = melbourne
 
-X = data.drop('price', axis=1)
-y = data['price']
+def regressao_linear(df_treino, df_teste):
+    X_train = df_treino.drop(columns=["price"])
+    y_train = df_treino["price"]
 
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)  # 80% treino, 20% teste
+    X_test = df_teste.drop(columns=["price"])
+    y_test = df_teste["price"]
 
-# Polynomial regression example
-lr = LinearRegression()
-lr.fit(X_train, y_train)
+    model = LinearRegression()
+    model.fit(X_train, y_train)
+    y_pred = model.predict(X_test)
 
-y_pred_train = lr.predict(X_train)  # Predicting the prices using the model
-y_pred_test = lr.predict(X_test)
+    mse = mean_squared_error(y_test, y_pred)
+    mae = mean_absolute_error(y_test, y_pred)
+    r2 = model.score(X_test, y_test)
 
-# Plotting actual vs predicted prices for polynomial regression
-plt.figure(figsize=(10, 5))
-plt.scatter(y_train, y_pred_train, color='green', alpha=0.3)
-z = np.polyfit(y_train, y_pred_train, 1)
-p = np.poly1d(z)
-plt.plot(y_train, p(y_train), color='red')
-plt.xlabel('Actual Prices')
-plt.ylabel('Predicted Prices')
-plt.show()
 
-mean_squared_error_train = mean_squared_error(y_train, y_pred_train) * 100
-mean_squared_error_test = mean_squared_error(y_test, y_pred_test) * 100
-mean_absolute_error_train = mean_absolute_error(y_train, y_pred_train) * 100
-mean_absolute_error_test = mean_absolute_error(y_test, y_pred_test) * 100
+    print("Mean Squared Error:", mse)
+    print("Mean Absolute Error:", mae)
+    print("R2 Score:", r2)
 
-print('Mean Squared Error (train):', mean_squared_error_train)
-print('Mean Squared Error (test):', mean_squared_error_test)
-print('Mean Absolute Error (train):', mean_absolute_error_train)
-print('Mean Absolute Error (test):', mean_absolute_error_test)
+    plt.figure(figsize=(10, 6))
+    plt.scatter(y_test, y_pred, alpha=0.5)
+    plt.plot([min(y_test), max(y_test)], [min(y_test), max(y_test)], color='red', linestyle='--')
+    plt.xlabel("Real Price")
+    plt.ylabel("Predicted Price")
+    plt.title("Real Price vs Predicted Price")
+    plt.show()
+
+    return model
+
+
+regressao_linear(melbourne, perth)
+

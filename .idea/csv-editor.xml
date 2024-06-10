@@ -3,7 +3,35 @@
   <component name="CsvFileAttributes">
     <option name="attributeMap">
       <map>
+        <entry key="\Ficheiros_Normalizados\1_1.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\Ficheiros_Normalizados\1_2.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\Ficheiros_Normalizados\NY_data_normalizado.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\Ficheiros_Normalizados\cidade1_normalizado.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\Ficheiros_Normalizados\cidade2_normalizado.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
@@ -24,6 +52,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\Ficheiros_Originais\Housing data.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\Ficheiros_Originais\NY.csv">
           <value>
             <Attribute>
@@ -32,6 +67,20 @@
           </value>
         </entry>
         <entry key="\Ficheiros_Originais\Perth_file.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\Ficheiros_Originais\cidade1.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\Ficheiros_Originais\cidade2.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
@@ -53,6 +102,13 @@
           </value>
         </entry>
         <entry key="\Ficheiros_sOutliers\NY_sOutliers.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\Ficheiros_sOutliers\cidade1_sOutliers.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />

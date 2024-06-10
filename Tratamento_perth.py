@@ -45,32 +45,31 @@ def normalizacao(arquivo_csv='Ficheiros_Normalizados/perth_data_normalizado.csv'
 
 
 normalizacao()
-#
-#
-# # use a hist to show the distribution of the columns 'bedrooms', 'bathrooms', 'car_garage', 'square_meters' and 'price' before and after removing the outliers
-#
-# def hist_plot(df, column, title):
-#     fig, axs = plt.subplots(1, 2, figsize=(10, 5))
-#     fig.suptitle(title)
-#     axs[0].hist(df[column], bins=20, color='blue', alpha=0.7)
-#     axs[0].set_title('Before')
-#     axs[0].set_xlabel(column)
-#     axs[0].set_ylabel('Frequency')
-#     axs[1].hist(perth_sOutliers[column], bins=20, color='red', alpha=0.7)
-#     axs[1].set_title('After')
-#     axs[1].set_xlabel(column)
-#     axs[1].set_ylabel('Frequency')
-#     plt.show()
-#
-# hist_plot(perth, 'bedrooms', 'Bedrooms')
-# hist_plot(perth, 'bathrooms', 'Bathrooms')
-# hist_plot(perth, 'car_garage', 'Car Garage')
-# hist_plot(perth, 'square_meters', 'Square Meters')
-# hist_plot(perth, 'price', 'Price')
+
+# use a hist to show the distribution of the columns 'bedrooms', 'bathrooms', 'car_garage', 'square_meters' and 'price' before and after removing the outliers
+
+def hist_plot(df, column, title):
+    fig, axs = plt.subplots(1, 2, figsize=(10, 5))
+    fig.suptitle(title)
+    axs[0].hist(df[column], bins=20, color='blue', alpha=0.7)
+    axs[0].set_title('Before')
+    axs[0].set_xlabel(column)
+    axs[0].set_ylabel('Frequency')
+    axs[1].hist(perth_sOutliers[column], bins=20, color='red', alpha=0.7)
+    axs[1].set_title('After')
+    axs[1].set_xlabel(column)
+    axs[1].set_ylabel('Frequency')
+    plt.show()
+
+hist_plot(perth, 'bedrooms', 'Bedrooms')
+hist_plot(perth, 'bathrooms', 'Bathrooms')
+hist_plot(perth, 'car_garage', 'Car Garage')
+hist_plot(perth, 'square_meters', 'Square Meters')
+hist_plot(perth, 'price', 'Price')
 
 
 
-# perth_sOutliers = pd.read_csv('Ficheiros_sOutliers/perth_file_sOutliers.csv')
-# # use sweetviz to generate a report for the perth_sOutliers dataset
-# report = sv.analyze(perth_sOutliers)
-# report.show_html('Ficheiros_sOutliers/perth_sOutliers_report.html')
+perth_sOutliers = pd.read_csv('Ficheiros_sOutliers/perth_file_sOutliers.csv')
+# use sweetviz to generate a report for the perth_sOutliers dataset
+report = sv.analyze(perth_sOutliers)
+report.show_html('Ficheiros_sOutliers/perth_sOutliers_report.html')

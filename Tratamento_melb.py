@@ -40,29 +40,26 @@ def normalizacao(arquivo_csv='Ficheiros_Normalizados/melb_data_normalizado.csv')
 
 normalizacao()
 
-# show me a hist of the column price of the melbourne_sOutliers dataframe and the melbourne dataframe
-#
-#
-# def hist_plot(df, column, title):
-#     fig, axs = plt.subplots(1, 2, figsize=(10, 5))
-#     fig.suptitle(title)
-#     axs[0].hist(df[column], bins=20, color='blue', alpha=0.7)
-#     axs[0].set_title('Before')
-#     axs[0].set_xlabel(column)
-#     axs[0].set_ylabel('Frequency')
-#     axs[1].hist(melbourne_sOutliers[column], bins=20, color='red', alpha=0.7)
-#     axs[1].set_title('After')
-#     axs[1].set_xlabel(column)
-#     axs[1].set_ylabel('Frequency')
-#     plt.show()
-#
-#
-# hist_plot(melbourne, 'bedrooms', 'Bedrooms')
-# hist_plot(melbourne, 'bathrooms', 'Bathrooms')
-# hist_plot(melbourne, 'car_garage', 'Car Garage')
-# hist_plot(melbourne, 'square_meters', 'Square Meters')
-# hist_plot(melbourne, 'price', 'Price')
-#
-# # Using the Sweetviz library to generate a report
-# report = sv.analyze(melbourne_sOutliers)
-# report.show_html('Ficheiros_sOutliers/melb_sOutliers_report.html')
+def hist_plot(df, column, title):
+    fig, axs = plt.subplots(1, 2, figsize=(10, 5))
+    fig.suptitle(title)
+    axs[0].hist(df[column], bins=20, color='blue', alpha=0.7)
+    axs[0].set_title('Before')
+    axs[0].set_xlabel(column)
+    axs[0].set_ylabel('Frequency')
+    axs[1].hist(melbourne_sOutliers[column], bins=20, color='red', alpha=0.7)
+    axs[1].set_title('After')
+    axs[1].set_xlabel(column)
+    axs[1].set_ylabel('Frequency')
+    plt.show()
+
+
+hist_plot(melbourne, 'bedrooms', 'Bedrooms')
+hist_plot(melbourne, 'bathrooms', 'Bathrooms')
+hist_plot(melbourne, 'car_garage', 'Car Garage')
+hist_plot(melbourne, 'square_meters', 'Square Meters')
+hist_plot(melbourne, 'price', 'Price')
+
+# Using the Sweetviz library to generate a report
+report = sv.analyze(melbourne_sOutliers)
+report.show_html('Ficheiros_sOutliers/melb_sOutliers_report.html')
