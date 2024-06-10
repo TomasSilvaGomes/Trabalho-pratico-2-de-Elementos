@@ -38,13 +38,6 @@
             </Attribute>
           </value>
         </entry>
-        <entry key="\Ficheiros_Originais\homesUpdated3.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
         <entry key="\Ficheiros_Originais\melb_data.csv">
           <value>
             <Attribute>
@@ -53,13 +46,6 @@
           </value>
         </entry>
         <entry key="\Ficheiros_Originais\perth_file.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="\Ficheiros_Originais\portland.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
