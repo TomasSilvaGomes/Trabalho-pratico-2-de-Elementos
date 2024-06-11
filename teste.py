@@ -1,28 +1,51 @@
 import pandas as pd
+import numpy as np
+from sklearn.preprocessing import MinMaxScaler
 from sklearn.model_selection import GridSearchCV
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
 import matplotlib.pyplot as plt
 import seaborn as sns
-import numpy as np
-
-# Carregar os dados
+from sklearn.model_selection import train_test_split
 
 
-perth = "Ficheiros_Normalizados/perth_data_normalizado.csv"
-melbourne = "Ficheiros_Normalizados/melb_data_normalizado.csv"
+df = pd.read_csv('Ficheiros_Originais/delaney_solubility_with_descriptors.csv')
 
-perth = pd.read_csv(perth)
-melbourne = pd.read_csv(melbourne)
+#remove outliers
+
+def remove_outliers(df, columns):
+    for column in columns:
+        q1 = df[column].quantile(0.25)
+        q3 = df[column].quantile(0.75)
+        iqr = q3 - q1
+        lower_bound = q1 - 1.5 * iqr
+        upper_bound = q3 + 1.5 * iqr
+        df = df[(df[column] > lower_bound) & (df[column] < upper_bound)]
+    return df
+
+needed_columns = [["MolLogP","MolWt","NumRotatableBonds","AromaticProportion","logS"]]
+df = remove_outliers(df, needed_columns)
+
+# Normalization of data
+def normalizacao(df):
+    scaler = MinMaxScaler()
+    df_normalizado = df
+    df_normalizado = df_normalizado[["MolLogP","MolWt","NumRotatableBonds","AromaticProportion","logS"]]
+    df_normalizado = pd.DataFrame(scaler.fit_transform(df_normalizado), columns=df_normalizado.columns)
+    return df_normalizado
 
 
-def regressao_linear(df_treino, df_teste):
+df = normalizacao(df)
+
+df=df.dropna()
+
+
+def regressao_linear(df_treino):
     # Separar as características e a variável alvo para treino e teste
-    X_train = df_treino.drop(columns=["price"])
-    y_train = df_treino["price"]
+    X_train = df_treino.drop(columns=["logS"])
+    y_train = df_treino["logS"]
 
-    X_test = df_teste.drop(columns=["price"])
-    y_test = df_teste["price"]
+    X_train, X_test, y_train, y_test = train_test_split(X_train, y_train, test_size=0.2, random_state=42)
 
     # Definição do modelo e busca de hiperparâmetros
     model = LinearRegression()
@@ -55,24 +78,7 @@ def regressao_linear(df_treino, df_teste):
     plt.title("Real Price vs Predicted Price")
     plt.show()
 
-    # show a heatmap with the correlation between the features
-    plt.figure(figsize=(10, 6))
-    sns.heatmap(df_treino.corr(), annot=True, cmap='coolwarm')
-    plt.title('Correlation Heatmap')
-    plt.show()
-
-    plt.figure(figsize=(10, 6))
-    sns.heatmap(df_teste.corr(), annot=True, cmap='coolwarm')
-    plt.title('Correlation Heatmap')
-    plt.show()
-
-
-
     return best_model
 
-
-regressao_linear(melbourne, perth)
-
-
-
+regressao_linear(df)
 
